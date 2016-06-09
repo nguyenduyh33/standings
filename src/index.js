@@ -1,7 +1,13 @@
 import 'core-js/fn/object/assign';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/Main';
+import { Router, Route, Link, browserHistory } from 'react-router'
+import MainLayout from './components/MainLayout';
 
-// Render the main component into the dom
-ReactDOM.render(<App />, document.getElementById('app'));
+require('styles/App.scss');
+
+ReactDOM.render((
+  <Router>
+    <Route path="/" component={MainLayout} />
+  </Router>
+), document.getElementById('app'))
